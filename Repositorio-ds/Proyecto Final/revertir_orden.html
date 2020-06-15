@@ -1,0 +1,93 @@
+<!Doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <title>Revertir orden</title>
+  </head>
+  <body>
+<div style="padding-top: 12%;">
+  
+  <table align="center" style="border:outset 15px;" style="border-radius: 1rem;" CELLPADDING=20 >
+    <th><h1>Revertir orden</h1></th>
+    <tr>
+      <td align="center" style="padding-top: 1rem;">
+        <button type="button" class="btn btn-primary mb-2" onclick="Revertir()">Revertir</button>
+        <button type="button" class="" onclick="resetear()">Reiniciar</button>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <form>
+        <input type="number" placeholder="Ingrese Numeros" id="ingresa"> <button type="reset" onclick="guardar()">Guardar</button>
+        </form>
+      </td>
+    </tr>
+    <tr><td align="center"> <h2 id="resultado" style="padding-top: 2rem;"></h2></td></tr>
+  </table>
+   
+</div>
+
+<script>
+
+  var numeros=[];
+  var rnumeros=[],
+      m=0,
+      condi=1;
+
+  resetear();
+  function resetear(){
+    document.getElementById("resultado").innerHTML="Sin Valores";
+    numeros=[];
+    rnumeros=[];
+    m=0;
+  }
+  function guardar(){
+    numeros[m]=Number(document.getElementById('ingresa').value);
+    m++;
+    document.getElementById("resultado").innerHTML=numeros;
+  }
+
+Revertir=function()
+{
+    class Stack {
+    constructor(){ 
+        this.items=[];}
+        push(element){
+            this.items.push(element);
+            return this.stack;
+           };
+           isEmpty(){
+            return this.items.length;
+           };
+        pop(){
+            return this.items.pop();
+           };
+    }
+function reverorder(numeros){
+var conta=new Stack();
+var n=0;//Temporal variable
+for(var i=numeros.length-1;i>=0;i--){
+    rnumeros[n]=numeros[i];
+    n++
+}
+    }
+    reverorder(numeros);
+    console.log(numeros);
+document.getElementById("resultado").innerHTML=rnumeros;
+}
+</script>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  </body>
+</html>
